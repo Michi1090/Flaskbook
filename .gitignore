@@ -256,3 +256,4 @@ cython_debug/
 # custom
 *.sqlite
 images/
+model.pt
