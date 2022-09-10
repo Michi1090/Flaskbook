@@ -50,7 +50,7 @@
   </section>
 
   <footer>
-    {% for tag in user_images_tag_dict[user_image.UserImage.id] %}
+    {% for tag in user_image_tag_dict[user_image.UserImage.id] %}
     #{{ tag.tag_name }}
     {% endfor %}
   </footer>
