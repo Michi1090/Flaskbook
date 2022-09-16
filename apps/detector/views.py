@@ -34,6 +34,8 @@ dt = Blueprint(
 # エンドポイント
 @dt.route('/')
 def index():
+    # 500エラー検証用
+    # raise Exception()
     # すべての画像を取得する
     user_images = (
         db.session.query(User, UserImage)
@@ -257,3 +259,8 @@ def save_detected_image_tags(user_image, tags, detected_image_file_name):
         db.session.add(user_image_tag)
     
     db.session.commit()
+
+# カスタムエラー
+@dt.errorhandler(404)
+def page_not_found(e):
+    return render_template('detector/404.html'), 404

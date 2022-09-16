@@ -112,6 +112,7 @@ class TestingConfig(BaseConfig):
     SQLALCHEMY_DATABASE_URI=f"sqlite:///{basedir / 'testing.sqlite'}"
     SQLALCHEMY_TRACK_MODIFICATIONS=False
     WTF_CSRF_ENABLED=False
+    UPLOAD_FOLDER = str(Path(basedir, 'tests', 'detector', 'images'))
 
 
 config = {
